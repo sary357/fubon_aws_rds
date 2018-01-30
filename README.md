@@ -25,10 +25,32 @@ root
 ```
 - 另外, 在這個 EC2 instance 上面有用一個 Elastic IP: 13.230.246.190, 這是目前唯一不在 Free Tier 的項目, 一個月預估約 $3 USD, 大概是 100 元台幣
 #### bgopen1.sh 邏輯
-- 1. 從政府公開資料網站 (https://data.gov.tw/dataset/9400) 下載最新的稅籍資料
-- 2. 和前一天下載的稅籍資料比對, 如果檔案的 md5 相同, 就會結束了, 如果 md5 不同, 會繼續下一步驟
-- 3. 移除 RDS (database name: fubon_open_data) 的 table: bgopen1 裡面所有資料
-- 4. 過濾欄位數量不同的資料, 預設是會過濾欄位不等於 15 個的資料
-- 5. 將過濾完的資料放到 RDS (database name: fubon_open_data) 的 table (bgopen1) 
+1. 從政府公開資料網站 (https://data.gov.tw/dataset/9400) 下載最新的稅籍資料
+2. 和前一天下載的稅籍資料比對, 如果檔案的 md5 相同, 就會結束了, 如果 md5 不同, 會繼續下一步驟
+3. 移除 RDS (database name: fubon_open_data) 的 table: bgopen1 裡面所有資料
+4. 過濾欄位數量不同的資料, 預設是會過濾欄位不等於 15 個的資料
+5. 將過濾完的資料放到 RDS (database name: fubon_open_data) 的 table (bgopen1) 
+6. 執行完上述步驟, 下 ``` shutdown -h now ``` 關掉主機
 
+### RDS (Region: N. Virginia)
+- 連線資訊
+
+| 項目 | 內容 |
+|--|--|
+| 帳號 | fubon |
+| 密碼 | ****** |
+| Port | 5432 |
+| JDBC Connection URL | jdbc:postgresql://fubon-data.ccxwpm2mpssl.us-east-1.rds.amazonaws.com:5432/fubon_opendata_db |
+
+- 資料庫: fubon_open_data
+- 用途
+
+| table | 用途 |
+|--|--|
+|bgopen1 | 稅籍資料 |
+
+## References
+- 稅籍資料: https://data.gov.tw/dataset/9400
+- AWS lambda 範例: https://aws.amazon.com/tw/premiumsupport/knowledge-center/start-stop-lambda-cloudwatch/
+- AWS RDS (PostgreSQL): https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html
 

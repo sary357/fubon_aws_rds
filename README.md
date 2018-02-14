@@ -49,6 +49,9 @@ root
 |--|--|
 |bgopen1 | 稅籍資料 |
 
+## 特別注意
+- 預計會在 2018 年 11 月 30 日停下所有服務, 所以如果需要的話, 可以將資料進行備份
+
 ## References
 - 稅籍資料: https://data.gov.tw/dataset/9400
 - AWS lambda 範例: https://aws.amazon.com/tw/premiumsupport/knowledge-center/start-stop-lambda-cloudwatch/

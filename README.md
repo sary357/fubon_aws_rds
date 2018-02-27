@@ -12,9 +12,11 @@
 
 ## flow
 ### Lambda (Region: Tokyo)
+- 程式碼: ` lambda/start-ec2-for-fubon-opendata.py `
 - 在 Region: Tokyo 的 Lambda function ``` start-ec2-for-fubon-opendata ``` 設定 UTC 19:00 啟動在 Region 在 Tokyo 的 EC2 instance (ec2 id: i-088c7864e0bb0f160)
 
 ### EC2 instance (Region: Tokyo)
+- 程式碼: `ec2/`
 - 在 Tokyo 的 EC2 instance 會在 UTC 19:05 使用帳號: ``` root ``` 在 /home/centos/opendata/bgopen1.sh, 如果要看執行時間, 可以用帳號: ``` root ``` 下 ```crontab -l``` 看一下
 
 ```
@@ -38,11 +40,11 @@ root
 | 項目 | 內容 |
 |--|--|
 | 帳號 | fubon |
-| 密碼 | ****** |
+| 密碼 |  ji3g4cl3bp6 |
 | Port | 5432 |
 | JDBC Connection URL | jdbc:postgresql://fubon-data.ccxwpm2mpssl.us-east-1.rds.amazonaws.com:5432/fubon_opendata_db |
 
-- 資料庫: fubon_open_data
+- 資料庫: fubon_opendata_db
 - 用途
 
 | table | 用途 |

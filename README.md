@@ -40,7 +40,7 @@ root
 | 項目 | 內容 |
 |--|--|
 | 帳號 | fubon |
-| 密碼 |  ji3g4cl3bp6 |
+| 密碼 | ******** |
 | Port | 5432 |
 | JDBC Connection URL | jdbc:postgresql://fubon-data.ccxwpm2mpssl.us-east-1.rds.amazonaws.com:5432/fubon_opendata_db |
 
